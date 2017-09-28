@@ -14,10 +14,7 @@
 				url: host,
 				dataType: 'json',
 				success: function (response) {
-					var counter = 100;
-					if (response.length < counter) {
-						counter = response.length;
-					}
+					var counter = Math.min(100, response.length);
 					var trBlock = '<thead><th>#</th><th>Username</th><th>Total Hashes</th></thead>';
 					for(i = 0; i < counter; i++) {
 						var tr = "<tr>";
